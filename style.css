@@ -58,7 +58,7 @@ input[type="checkbox"] {
 #viewport {
   height: 200px;
   width: 200px;
-  display: hidden;
+  display: none;
 }
 
 /* elements grouping */

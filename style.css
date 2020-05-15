@@ -55,6 +55,12 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
+#viewport {
+  height: 200px;
+  width: 200px;
+  border: 1px solid gray;
+}
+
 /* elements grouping */
 .tabs {
   margin-top: 20px;

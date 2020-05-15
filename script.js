@@ -42,7 +42,6 @@ for (const accessory of filenames.accessories) {
   appendNewImage(filename, "accessories");
 }
 
-// append an asset -> use checkboxes to preserve current state
 function appendNewImage(e, p) {
   const id = e.match(/(pengmoji_)(.+)(\.png)/)[2]
   const newCheckbox = document.createElement("input");
@@ -59,10 +58,7 @@ function appendNewImage(e, p) {
       const element = document.createElement("img");
       element.id = "emoji" + id;
       element.className += "emoji-child";
-      // element.setAttribute("crossOrigin", "Anonymous");
-      //element.style.backgroundImage = 'url(' + e + ')';
       element.src = e;
-      // element.setAttribute("crossOrigin", "Anonymous");
       emojiBox.appendChild(element);
     } else {
       emojiBox.removeChild(document.getElementById("emoji" + id))
@@ -76,18 +72,15 @@ function appendNewImage(e, p) {
   parent.appendChild(newLabel);
 }
 
-// Generate the image from div
-// Currently using html2canvas
+// Generate the image from emoji div using canvas
 // This is a form in case I ever want to add a better back-end way of rendering.
 // It has the state of checkboxes in Object.fromEntries(new FormData(e.target).entries()).
 document.getElementById("emoji_form").addEventListener("submit", (e) => {
   e.preventDefault();
   
   const html_to_generate = document.getElementById("emoji")
-
-  const canvas = document.getElementById('viewport'),
-  context = canvas.getContext('2d');
-  // context.drawImage(document.getElementById('kitten-png'), 0, 0);
+  const canvas = document.getElementById('viewport');
+  const context = canvas.getContext('2d');
   const children = Array.from(html_to_generate.childNodes);
 
   for (const child of children) {
@@ -99,11 +92,8 @@ document.getElementById("emoji_form").addEventListener("submit", (e) => {
   if (typeof link.download === 'string') {
     link.href = uri; 
     link.download = "pengmoji.png";
-    //Firefox requires the link to be in the body
     document.body.appendChild(link);
-    //simulate click
     link.click();
-    //remove the link when done
     document.body.removeChild(link);
    } else {
      window.open(uri);

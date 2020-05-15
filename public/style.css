@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 2em 1em;
+  line-height: 1.5em;
+}
+
+.container {
+  max-width: 900px;
+  min-width: 400px;
+  margin: 0 auto;
+}
+
+.emoji-child,
+.emoji-element,
+#emoji {
+  height: 200px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: 200px 200px;
+  background-color: transparent;  
+}
+
+#emoji {
+  border: 3px solid grey;
+  background: none;
+  margin: 60px auto;
+}
+
+.emoji-child {
+  position: absolute;
+}
+
+.emoji-element {
+  display: inline-block;
+  order: 1;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+#generate {
+  display: block;
+  padding: 1rem 2rem;
+  background: grey;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+/* elements grouping */
+.tabs {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+ 
+.tabs .group {
+  order: 1;
+  display: block;
+  padding: 1rem 2rem;
+  margin-right: 0.2rem;
+  cursor: pointer;
+  background:  gold;
+  font-weight: bold;
+  transition: background ease 0.2s;
+}
+ 
+.tabs .tab {
+  order: 99;
+  flex-grow: 1;
+  width: 100%;
+  display: none;
+  padding: 1rem;
+  background: #fff;
+}
+ 
+.tabs input[type="radio"] {
+  display: none;
+}
+ 
+.tabs input[type="radio"]:checked + label {
+  background: #fff;
+}
+ 
+.tabs input[type="radio"]:checked + label + .tab {
+  display: block;
+}
+
+@media (max-width: 45em) {
+  .tabs .tab,
+  .tabs .group {
+    order: initial;
+  }
+ 
+  .tabs .group {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 0.2rem;
+  }
+}

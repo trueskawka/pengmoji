@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Express yourself with PEng!">
+
+    <title>PEngmoji</title>
+
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+<!--     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script> -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="emoji"></div>
+
+      <!-- pure CSS tabs https://webdevtrick.com/pure-css-tabs-responsive/ -->
+      <form class="tabs" id="emoji_form">
+        <input type="submit" value="Generate" id="generate">
+        
+        <input type="radio" name="tabs" id="tabone" checked="checked">
+        <label for="tabone" class="group">Face</label>
+        <div class="tab" id="faces"></div>
+
+        <input type="radio" name="tabs" id="tabtwo">
+        <label for="tabtwo" class="group">Eyes</label>
+        <div class="tab" id="eyes"></div>
+
+        <input type="radio" name="tabs" id="tabthree">
+        <label for="tabthree" class="group">Beaks</label>
+        <div class="tab" id="noses"></div>
+
+        <input type="radio" name="tabs" id="tabfour">
+        <label for="tabfour" class="group">Reactions</label>
+        <div class="tab" id="reactions"></div>
+
+        <input type="radio" name="tabs" id="tabfive">
+        <label for="tabfive" class="group">Accessories</label>
+        <div class="tab" id="accessories"></div>
+      </form>
+    </div>
+  </body>
+</html>
